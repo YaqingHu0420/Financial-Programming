@@ -442,16 +442,15 @@ with tab5:
             # Valuation_Ratios
             st.markdown(f"**Valuation Ratios**")
             st.write(
-            f"The trailing PE ratio is {round(stock_info.get('trailingPE'),2)} and the forward PE ratio is {round(stock_info.get('forwardPE'),2)}. "
-            f"{select_stock}'s PEG ratio is {stock_info.get('pegRatio')}.")
+            f"The trailing PE ratio is {round(stock_info.get('trailingPE'),2)} and the forward PE ratio is {round(stock_info.get('forwardPE'),2)}. ")
             Valuation_Ratios= {
-            "Detail": ["PE Ratio", "Forward PE", "PS Ratio", "PB Ratio", "PEG Ratio"],
+            "Detail": ["PE Ratio", "Forward PE", "PS Ratio", "PB Ratio", ""],
                 "Info": [
                     round(stock_info.get("trailingPE"),2),
                     round(stock_info.get("forwardPE"),2),
                     round(stock_info.get("priceToSalesTrailing12Months"),2),
                     round(stock_info.get("priceToBook"),2),
-                    round(stock_info.get("pegRatio"),2)
+                    ""
                 ]}
             ratios_df = st.dataframe(Valuation_Ratios, use_container_width=True, hide_index=True)
 
